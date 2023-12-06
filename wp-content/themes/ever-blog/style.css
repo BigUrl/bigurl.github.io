@@ -1,0 +1,457 @@
+/*!
+Theme Name: Ever Blog
+Theme URI: https://adorethemes.com/downloads/ever-blog/
+Author: Adore Themes
+Author URI: https://adorethemes.com/
+Description: Ever Blog is a WordPress theme that is designed to create professional blogging websites with a modern and creative design. It is lightweight and customizable, making it easy to use and ideal for fashion, lifestyle, travel, food, photography blogs, and more. The theme is optimized for fast loading and accessibility, ensuring that it looks great on all devices and screen sizes. Recent Blog is also cross-browser compatible and mobile-friendly. It is translation-ready, making it suitable for bloggers in any language. With its many features, Recent Blog provides everything needed to build a unique and engaging blog website. Live preview : https://demo.adorethemes.com/ever-blog/
+Version: 1.0.2
+Requires at least: 5.0
+Requires PHP: 7.4
+Tested up to: 6.4
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Template: forever-blog
+Text Domain: ever-blog
+Tags: custom-background, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, left-sidebar, right-sidebar, blog, one-column, portfolio, photography, theme-options, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Ever Blog is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+
+*/
+
+:root {
+	--primary-color: #ff1a75;
+	--color-white: #ffffff;
+	--accent-color: #151A25;
+}
+
+.site-header {
+	margin-bottom: 0;
+}
+
+.author-widget,
+.adore-header {
+	background-color: var(--accent-color);
+}
+
+@media (min-width: 992px){
+	.main-navigation ul a {
+		color: var(--color-white);
+		opacity: 1;
+	}
+
+	.main-navigation ul li a:focus,
+	.main-navigation ul li a:hover {
+		color: var(--color-white);
+		text-decoration: underline;
+	}
+
+	.main-navigation ul ul li a,
+	.main-navigation ul ul li a:hover,
+	.main-navigation ul ul li a:focus {
+		color: var(--color-text);
+		opacity: 1;
+	}
+
+	.main-navigation ul .current_page_item>a,
+	.main-navigation ul .current-menu-item>a,
+	.main-navigation ul .current_page_ancestor>a,
+	.main-navigation ul .current-menu-ancestor>a {
+		color: var(--color-white);
+		text-decoration: underline;
+	}
+	.main-navigation ul .current_page_item>a::before,
+	.main-navigation ul .current-menu-item>a::before,
+	.main-navigation ul .current_page_ancestor>a::before,
+	.main-navigation ul .current-menu-ancestor>a::before {
+		display: none;
+	}
+
+}
+@media (max-width: 991px){
+	.menu-toggle span{
+		background-color: var(--color-white);
+	}
+}
+
+.navigation-search .navigation-search-wrap .navigation-search-icon,
+.header-end ul.social-links a {
+	color: var(--color-white);
+	opacity: 1;
+}
+
+.navigation-search .navigation-search-wrap .navigation-search-icon:hover,
+.header-end ul.social-links a:hover,
+.navigation-search .navigation-search-wrap .navigation-search-icon:focus,
+.header-end ul.social-links a:focus {
+	color: var(--color-white);
+	text-decoration: underline;
+}
+
+.adore-widget.social-widget .social-widgets-wrap a,
+.entry-cat.overlay-cat .post-categories li a{
+	border-radius: 100vmax;
+}
+
+.author-widget .author-social-contacts a {
+	color: var(--color-text);
+}
+.author-widget .author-social-contacts a:focus,
+.author-widget .author-social-contacts a:hover {
+	color: var(--primary-color);
+}
+/* Adore Slick Navigation css start
+--------------------------------------------- */
+
+.banner-carousel-navigation {
+	display: flex;
+	gap: 10px;
+}
+.banner-carousel-navigation .adore-arrow {
+	font-size: var(--font-size-sm);
+	width: 40px;
+	height: 40px;
+	color: var(--color-white);
+	border: 1px solid;
+	text-align: center;
+	line-height: 1px;
+	z-index: 1;
+	cursor: pointer;
+	font-weight: 600;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: var(--transition);
+	border-color: var(--color-background);
+	background-color: transparent;
+}
+
+.banner-carousel-navigation .adore-arrow:focus,
+.banner-carousel-navigation .adore-arrow:hover {
+	opacity: 0.85;
+}
+.banner-carousel-navigation .adore-arrow:focus{
+	outline: 1px dashed;
+	outline-offset: 2px;
+}
+.banner-carousel-navigation .adore-arrow.slick-disabled {
+	opacity: 0.3;
+	pointer-events: none;
+}
+/* Adore Slick Navigation css end
+--------------------------------------------- */
+/*start banner*/
+.banner-section.frontpage{
+	margin-top: 0;
+	position: relative;
+	isolation: isolate;
+	background-color: var(--accent-color);
+}
+.banner-section.frontpage::before{
+	position: absolute;
+	content: "";
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	width: 100%;
+	height: 120px;
+	background-color: var(--body-background);
+}
+.banner-section{
+	overflow: hidden;
+}
+.banner-section.has-banner-text .banner-text-wrap{
+	max-width: 850px;
+	margin-bottom: 50px;
+	color: var(--color-white);
+	padding-block-start: 4rem;
+}
+.banner-section.has-banner-text .banner-text-wrap .banner-text-title{
+	font-size: var(--font-size-xl);
+	margin-block: 0 20px;
+}
+.banner-section.has-banner-text .banner-text-wrap .banner-sub-title{
+	font-size: var(--font-size-base);
+}
+.banner-section.has-banner-text .banner-text-wrap .banner-subscribe-btn{
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}
+.banner-section .banner-wrap{
+	color: var(--color-white);
+	padding-top: 3rem;
+}
+.banner-section .banner-wrap .banner-section-wrapper .slick-list{
+	overflow: visible;
+}
+.banner-section .banner-wrap .slick-list{
+	margin-inline: -15px;
+}
+.banner-section .banner-wrap .slick-slide{
+	padding-inline: 15px;
+}
+.banner-section .banner-wrap .post-item.overlay-post{
+	aspect-ratio: unset;
+	min-height: 480px;
+}
+
+.banner-section .banner-wrap .post-item.overlay-post .post-item-content .entry-title{
+	font-size: calc(var(--font-size-md) - 2px);
+}
+/*end banner*/
+
+
+/* Section Head
+--------------------------------------------- */
+@media (max-width: 600px) {
+	.section-head {
+		gap: 5px;
+		flex-direction: row;
+		align-items: flex-end;
+	}
+
+}
+/*End Section Head
+--------------------------------------------- */
+
+/* Start List Posts Section
+--------------------------------------------- */
+
+.post-item.post-list {
+	padding: 20px;
+	border-bottom: 0;
+	display: flex;
+	border-radius: 5px;
+	transition: var(--transition);
+}
+
+.site-footer .post-item.post-list ,
+#secondary .post-item.post-list {
+	padding: 15px;
+}
+
+.post-item.post-list .post-item-image {
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+div:not(.theme-archive-layout) .post-item.post-list:not(.has-image) .post-item-image {
+	/* display: none; */
+}
+
+.post-item.post-list .post-item-content {
+	flex-grow: 1;
+	align-self: center;
+}
+@media (min-width: 601px) {
+	.post-item.post-list .post-item-content {
+		padding-inline: 20px;
+	}
+}
+
+/* End List Posts Section
+--------------------------------------------- */
+
+
+/* list layout */
+.theme-archive-layout.list-layout {
+	display: grid;
+	gap: 30px;
+	margin-bottom: 50px;
+}
+
+.theme-archive-layout.list-layout article {
+	margin-bottom: 0;
+}
+.theme-archive-layout.list-layout article:not(.has-post-thumbnail) .post-item.post-list .post-item-image{
+	display: none;
+}
+
+.theme-archive-layout.list-layout article .post-item.post-list {
+	border: none;
+	box-shadow: var(--shadow);
+	border-radius: 5px;
+	align-items: unset;
+}
+
+.theme-archive-layout.list-layout article .post-item .post-item-content {
+	align-self: center;
+}
+.theme-archive-layout.list-layout article:not(.has-post-thumbnail) .post-item.post-list .post-item-content{
+	padding: 0;
+}
+
+.theme-archive-layout.list-layout article .post-item .post-item-content .entry-title {
+	font-size: var(--font-size-md);
+}
+
+/* overlay item  */
+.theme-archive-layout.list-layout article:nth-child(3n+3) .post-item {
+	position: relative;
+	isolation: isolate;
+	min-height: 320px;
+	display: flex;
+	align-items: flex-end;
+	padding: 0;
+}
+
+.theme-archive-layout.list-layout article:nth-child(3n+3) .post-item .post-item-image {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	border-radius: 5px;
+	max-width: unset;
+	flex-basis: unset;
+}
+
+.theme-archive-layout.list-layout article:nth-child(3n+3) .post-item .post-item-image img {
+	width: 100%;
+}
+
+.theme-archive-layout.list-layout article:nth-child(3n+3) .post-item .post-item-image .read-time-comment {
+	top: 10px;
+	bottom: unset;
+}
+
+.theme-archive-layout.list-layout article:nth-child(3n+3) .post-item .post-item-content {
+	padding: 20px;
+	padding-block-start: 80px;
+	border-radius: 5px;
+	align-self: flex-end;
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.theme-archive-layout.list-layout article:nth-child(3n+3) .post-item .post-item-content,
+.theme-archive-layout.list-layout article:nth-child(3n+3) .post-item .post-item-content a,
+.theme-archive-layout.list-layout article:nth-child(3n+3) .post-item .post-item-content .entry-meta li a,
+.theme-archive-layout.list-layout article:nth-child(3n+3) .post-item .post-item-content .entry-cat .post-categories li a,
+.theme-archive-layout.list-layout article:nth-child(3n+3) .post-item .post-item-content .entry-title a {
+	color: #fff;
+}
+
+@media (max-width: 600px) {
+	.theme-archive-layout.list-layout article:nth-child(3n+3) .post-item .post-item-content {
+		flex-grow: unset;
+		padding: 20px;
+	}
+}
+
+/* overlay item  */
+
+@media (max-width: 600px) {
+	.theme-archive-layout.list-layout article .post-item.post-list {
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+
+	.theme-archive-layout.list-layout article .post-item.post-list .post-item-image {
+		flex: unset;
+		max-width: unset;
+	}
+
+	.theme-archive-layout.list-layout article .post-item.post-list .post-item-content {
+		text-align: start;
+		padding-top: 20px;
+	}
+
+	.theme-archive-layout.list-layout article .post-item.post-list .post-item-content .entry-meta,
+	.theme-archive-layout.list-layout article .post-item.post-list .post-item-content .entry-cat .post-categories {
+		justify-content: flex-start;
+	}
+}
+
+@media (min-width:991px) {
+	.theme-archive-layout.list-layout.list-style-2 article .post-item.post-list {
+		flex-direction: row-reverse;
+	}
+
+	.theme-archive-layout.list-layout.list-style-3 article:nth-child(even) .post-item.post-list {
+		flex-direction: row-reverse;
+	}
+}
+
+/* list layout */
+
+.loadmore-wrapper .adore-load-more-posts {
+	border-radius: 100vmax;
+}
+
+/* Start Instagram section
+--------------------------------------------- */
+
+.instagram-section {}
+
+.instagram-section .instagram-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	margin-inline: -15px;
+}
+
+.instagram-section .instagram-wrapper .instagram-img {
+	padding-inline: 15px;
+	margin-bottom: 15px;
+	aspect-ratio: 1/0.7;
+	width: 16.5%;
+	flex-grow: 1;
+}
+
+@media (max-width:767px) {
+	.instagram-section .instagram-wrapper {
+		margin-inline: -10px;
+	}
+
+	.instagram-section .instagram-wrapper .instagram-img {
+		width: 50%;
+		padding-inline: 10px;
+		margin-bottom: 10px;
+	}
+}
+
+
+.instagram-section .instagram-wrapper .instagram-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+.instagram-section .instagram-head {
+	font-weight: normal;
+	padding: 3px 10px;
+	line-height: 1.2;
+	letter-spacing: 0.5px;
+	font-size: var(--font-size-sm);
+	text-align: center;
+}
+
+.instagram-section .instagram-head a {
+	text-decoration: none;
+	color: var(--color-text);
+}
+
+.instagram-section .instagram-head a:focus,
+.instagram-section .instagram-head a:hover {
+	color: var(--primary-color);
+}
+
+/* End Instagram section
+--------------------------------------------- */
+
+/* Start Scroll to top css
+--------------------------------------------- */
+a.forever-blog-scroll-to-top {
+	border-radius: 100%;
+}
+
+/* End Scroll to top css
+--------------------------------------------- */
